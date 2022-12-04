@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    html {
+      font-family: sans-serif;
+    }
+    body {
+      background-image: linear-gradient(180deg, rgba(229,9,20,1) 10%, rgba(30, 0, 0, 1) 90%);
+      
+      padding: 20px;
+    }
+    #wrapper {
+      background-color: white;
+      border-radius: 5px;
+      width: 100%;
+      border-style: solid;
+    }
+    header > * {
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+    }
+    select {
+      display: inline-block;
+      align-self: center;
+      margin-left: 5%;
+    }
+    #graphDonut {
+      display: inline-flex;
+      align-items: left;
+      width: 100%;
+    }
+    #donutSVG {
+      position: relative;
+      margin-top: 80px;
+      
+    }
+  </style>
+  
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  
+
+  <script src="js/barGraphView.js"></script>
+  <script src="js/lineGraphView.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/donutView.js"></script>
+  <script src="js/plotGraphView.js"></script>
+  <script src="js/boxAndWhiskerGraphView.js"></script>
+
+  
+
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="content">
+      <div id="header">
+          <header>
+              <h1>Maturity Ratings Through the Years: A Netflix Analysis</h1>
+              <div>Names: Tayler Tolman, Albert Frei, Gregorius Sukiman</div>
+          </header>
+      </div>
+      <select name="graphType" id="graphToggle" onchange="toggleGraphs()"> 
+        <option value="scatter">Scatterplot</option>
+        <option value="line">Line Graph</option> 
+      </select>
+      <div>
+        <div id="graphDonut">
+          <svg id="lineGraphSVG" style="display:none">
+            <g id="x-axis"></g>
+            <g id="y-axis"></g>
+            <g id="lines"></g>
+            <g id="overlay"><line></line></g>
+          </svg>
+          <svg id="scatterGraphSVG" >
+            <g id="x-axis"></g>
+            <g id="y-axis"></g>
+          </svg>
+          <svg id="donutSVG"></svg>
+        </div>
+      
+        <div style="text-align:center">
+          <svg id="barGraphSVG">
+            <g id="xbar-axis"></g>
+            <g id="ybar-axis"></g>
+            <g id="bars"></g>
+          </svg>
+          <svg id="boxWhiskerSVG">
+            <g id="x-axis"></g>
+            <g id="y-axis"></g>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  
+  </div>
+</body>
+
+</html>
