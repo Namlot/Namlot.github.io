@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -30,13 +30,29 @@
     }
     #graphDonut {
       display: inline-flex;
-      align-items: left;
+      align-items: right;
       width: 100%;
     }
     #donutSVG {
       position: relative;
       margin-top: 80px;
       
+    }
+    #barBox {
+      display: inline-flex;
+      align-items: right;
+      width: 100%;
+    }
+    #intro {
+      align-items: center;
+      padding-right: 20%;
+      padding-left: 20%;
+      margin-bottom: 20px;
+    }
+    #introContent {
+      align-items: center;
+      text-align: center;
+      border-bottom: solid;
     }
   </style>
   
@@ -60,9 +76,25 @@
     <div id="content">
       <div id="header">
           <header>
-              <h1>Maturity Ratings Through the Years: A Netflix Analysis</h1>
-              <div>Names: Tayler Tolman, Albert Frei, Gregorius Sukiman</div>
+              <h1>A Netflix Analysis</h1>
+              <div>By: Tayler Tolman, Albert Frei, Gregorius Sukiman</div>
           </header>
+      </div>
+      <div id="intro">
+        <div id="introContent">
+          <p>
+            In 2017, Netflix's CEO claimed that Netflix's biggest competitor was sleep. Netflix
+            is indeed very popular. By joining two data sources, one from Netflix and one from IMDB, we are able to
+            explore questions about this very popular product. 
+          </p>
+          <div>
+            see demo video <a href="https://www.youtube.com/watch?v=PQ-dJceq7qw&ab_channel=TaylerTolman"> Here </a>
+          </div>
+          <div>
+            See process book <a href="https://github.com/Nathan-Joe/dataviscourse-pr-FlixHunters/tree/main/flixHunters"> Here </a>
+          </div>
+        </div>
+       
       </div>
       <select name="graphType" id="graphToggle" onchange="toggleGraphs()"> 
         <option value="scatter">Scatterplot</option>
@@ -83,7 +115,7 @@
           <svg id="donutSVG"></svg>
         </div>
       
-        <div style="text-align:center">
+        <div id="barBox" style="text-align:center">
           <svg id="barGraphSVG">
             <g id="xbar-axis"></g>
             <g id="ybar-axis"></g>
@@ -92,6 +124,7 @@
           <svg id="boxWhiskerSVG">
             <g id="x-axis"></g>
             <g id="y-axis"></g>
+            <g id="plots"></g>
           </svg>
         </div>
 
